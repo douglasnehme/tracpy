@@ -7,7 +7,7 @@ TracPy class
 import tracpy
 import numpy as np
 from . import tracmass
-from matplotlib.mlab import find
+# from matplotlib.mlab import find
 
 
 class Tracpy(object):

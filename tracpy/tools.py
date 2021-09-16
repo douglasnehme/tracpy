@@ -9,6 +9,7 @@ Functions include:
 * convert_indices
 * check_points
 * seed
+* find
 """
 
 import numpy as np
@@ -476,3 +477,13 @@ def make_proj(setup='nwgom', usebasemap=True, **kwargs):
         proj = Proj(**inputs)
 
     return proj
+
+
+def find(condition):
+    """
+    https://github.com/kthyng/tracpy/issues/12#issuecomment-555493595
+    """
+
+    res, = np.nonzero(np.ravel(condition))
+
+    return res

@@ -1,47 +1,60 @@
 # TracPy
 
-[<img src="https://zenodo.org/badge/4563/kthyng/tracpy.png" class="picFloat">](https://zenodo.org/record/10433#.U6SWWBYxmd8)
-
 Fortran core of TRACMASS + Python wrapping around the outside.
+
+## Chages Info
+
+Forked from [TracPy v1.0](https://github.com/kthyng/tracpy/releases/tag/v1.0) with minor changes in:
+1. [tools.py](https://github.com/douglasnehme/tracpy/blob/master/tracpy/tools.py#L482)
+1. [tracpy_class.py](https://github.com/douglasnehme/tracpy/blob/master/tracpy/tracpy_class.py#L10)
 
 ## Set up for TracPy
 
 I recommend setting up a good python environment for this work, as follows:
 
-1. Install miniconda:
- * download file from Continuum
- * `bash [download file]`
+1. If you do not have anaconda or miniconda install miniconda:
+    * download file from Continuum
+    * `bash [download file]`
+
 1. Set `conda-forge` to be highest-priority channel (this helps the geography libraries like cartopy that connect to the geos library be all consistent)
- * `conda config --add channels conda-forge --force`
-1. Create environment called "tracpy" (some of the listed packages are required and some are just suggested because they are useful)
- * `conda create --name tracpy python=3.6 cartopy matplotlib ipython netCDF4 fiona shapely pandas xarray cmocean jupyter scipy numpy seaborn --yes`
-1. Need to also have `octant`:
- * `git clone https://github.com/hetland/octant.git`
- * `cd octant`
- * `pip install -e .`
-1. Make sure you installed `tracpy`:
- * `pip install -e .`
+    * `conda config --add channels conda-forge --force`
+
+1. Create environment called "tracpy", reinforce conda-forge usage and I need to install pyproj (some of the listed packages are required and some are just suggested because they are useful)
+    * `conda create --name tracpy --channel conda-forge python=3.6 cartopy matplotlib ipython netCDF4 fiona shapely pandas xarray cmocean jupyter scipy numpy seaborn pyproj --yes`
+
 1. To use environment:
- * `source activate tracpy`
+    * `conda activate tracpy`
+
+1. Need to also have `octant`:
+    * `cd ~`
+    * `git clone https://github.com/hetland/octant.git`
+    * `cd octant`
+    * `pip install -e .`
+
+1. Make sure you installed `octant`:
+    * `conda list octant`
+
+1. Get `tracpy` source code:
+    * `cd ~`
+    * `git clone https://github.com/kthyng/tracpy.git`
+    * `cd tracpy`
+    * `pip install -e .`
+    * This makes the package an editable install so that it can be updated with future additions to TracPy. To instead install the package locally:
+`pip install --user .` Note that a required package is [octant](https://github.com/hetland/octant).
+
+1. Make sure you installed `tracpy`:
+    * `conda list tracpy`
+
 1. To stop using environment (in a given terminal window):
- * `source deactivate`
+    * `conda deactivate`
+
 1. To install more packages later:
- * `conda install [package name]`
-1. Run the manual in `/docs` with `jupyter notebook`
+    * `conda install --channel conda-forge [package name]`
+
+1. [not tested from here] Run the manual in `/docs` with `jupyter notebook`
 
 
 If you want to install locally, you can generally use the `--user` flag (e.g. `pip install --user .`).
-
-## To get the code
-
-1. Make your new TracPy directory and change directories into it.
-1. Clone the TracPy repository from GitHub.
-In the command prompt, type:
-`git clone https://github.com/kthyng/tracpy.git`
-1. Install the package globally:
-`pip install -e .`
-This makes the package an editable install so that it can be updated with future additions to TracPy. Note that a required package is [octant](https://github.com/hetland/octant). To instead install the package locally:
-`pip install --user .`
 
 
 ## To update the code later

@@ -51,11 +51,21 @@ I recommend setting up a good python environment for this work, as follows:
 1. To install more packages later:
     * `conda install --channel conda-forge [package name]`
 
-1. [not tested from here] Run the manual in `/docs` with `jupyter notebook`
+1. If have problems with any python dependencies, one possibility is to create the conda environment based on a tested (not exhaustively) .yml file. But first remove the previous `tracpy` environment:
+   * `conda remove --name tracpy --all`
+
+1. Recreate the `tracpy` based on the .yml file
+   * `cd ~`
+   * `conda env create -f tracpy/tracpy_numa7_sep2021.yml`
+
+1. Reinstall [`octant`](https://github.com/douglasnehme/tracpy/blame/4cdf395f039325c9cc93b72f748b9263a7463cbf/README.md#L28-L35) and [`tracpy`](https://github.com/douglasnehme/tracpy/blame/4cdf395f039325c9cc93b72f748b9263a7463cbf/README.md#L37-L46)
 
 
-If you want to install locally, you can generally use the `--user` flag (e.g. `pip install --user .`).
+[Not tested from here]
 
+## Manual
+
+Run the manual in `/docs` with `jupyter notebook`
 
 ## To update the code later
 

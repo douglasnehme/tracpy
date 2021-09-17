@@ -36,7 +36,7 @@ I recommend setting up a good python environment for this work, as follows:
 
 1. Get `tracpy` source code:
     * `cd ~`
-    * `git clone https://github.com/kthyng/tracpy.git`
+    * `git clone https://github.com/douglasnehme/tracpy.git`
     * `cd tracpy`
     * `pip install -e .`
     * This makes the package an editable install so that it can be updated with future additions to TracPy. To instead install the package locally:
